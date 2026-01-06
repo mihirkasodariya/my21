@@ -294,3 +294,66 @@ export const deleteUser = asyncHandler(async (req, res) => {
 //   const [rows] = await pool.query("SELECT * FROM users");
 //   res.json(rows);
 // }));
+
+// // Web Scraping
+// // npm i puppeteer
+// const puppeteer = require('puppeteer');
+
+// (async () => {
+//     // Browser launch karein
+//     const browser = await puppeteer.launch({ headless: false }); // Headless: false taaki browser dikhe
+//     const page = await browser.newPage();
+    
+//     // Kisi dummy vehicle info site par jayein
+//     await page.goto('https://example-vehicle-info-site.com');
+
+//     // 1. Input box me gaadi number type karein
+//     await page.type('#vehicleInput', 'GJ05AB1234');
+
+//     // 2. Search button par click karein
+//     await page.click('#searchBtn');
+
+//     // 3. Result load hone ka wait karein
+//     await page.waitForSelector('.owner-name');
+
+//     // 4. Data extract karein
+//     const ownerName = await page.$eval('.owner-name', el => el.innerText);
+    
+//     console.log("Vehicle Owner:", ownerName);
+
+//     await browser.close();
+// })();
+
+// function isValidVehicleNumber(number) {
+//     // Format: GJ05AB1234 or GJ05A1234
+//     // ^[A-Z]{2} : Pehle 2 letters (State e.g., GJ)
+//     // [0-9]{2}  : RTO Code (05)
+//     // [A-Z]{1,2}: Series (A or AB)
+//     // [0-9]{4}  : Number (1234)
+//     const regex = /^[A-Z]{2}[0-9]{2}[A-Z]{1,2}[0-9]{4}$/;
+    
+//     return regex.test(number);
+// }
+
+// console.log(isValidVehicleNumber("GJ05AB1234")); // true
+// console.log(isValidVehicleNumber("GJ5AB123"));   // false
+
+
+
+// const axios = require('axios');
+
+// async function getVehicleDetails(vehicleNo) {
+//     try {
+//         const response = await axios.get(`https://api.example.com/vehicle/${vehicleNo}`, {
+//             headers: {
+//                 'Authorization': 'Bearer YOUR_API_KEY' // Agar key chahiye ho
+//             }
+//         });
+        
+//         console.log("Challan Details:", response.data);
+//     } catch (error) {
+//         console.log("Error fetching data:", error.message);
+//     }
+// }
+
+// getVehicleDetails('MH02CL5050');
