@@ -126,6 +126,67 @@ export const deleteUser = asyncHandler(async (req, res) => {
 
 
 
+// exports.searchVehicle = async (req, res) => {
+//   try {
+//     const { ownerName } = req.query;
+
+//     const vehicles = await Vehicle.find({
+//       ownerName: { $regex: ownerName, $options: "i" }
+//     });
+
+//     res.json(vehicles);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// };
+
+// exports.getExpiredRC = async (req, res) => {
+//   try {
+//     const today = new Date();
+//     const vehicles = await Vehicle.find({
+//       rcExpiry: { $lt: today }
+//     });
+
+//     res.json({ expiredCount: vehicles.length, vehicles });
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// };
+
+
+// *
+// **
+// ***
+// ****
+// for (let i = 1; i <= 4; i++) {
+//   console.log("*".repeat(i));
+// }
+
+
+// ****
+// ***
+// **
+// *
+// for (let i = 4; i >= 1; i--) {
+//   console.log("*".repeat(i));
+// }
+
+
+//    *
+//   ***
+//  *****
+// let n = 3;
+// for (let i = 1; i <= n; i++) {
+//   console.log(" ".repeat(n - i) + "*".repeat(2 * i - 1));
+// }
+
+// const page = Number(req.query.page) || 1;
+// const limit = 10;
+// const skip = (page - 1) * limit;
+
+// Model.find().skip(skip).limit(limit);
+
+
 // const data = await User.aggregate([
 //   // 1️⃣ Match (filter users)
 //   {
